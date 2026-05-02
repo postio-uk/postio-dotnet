@@ -60,11 +60,13 @@ dotnet pack src/Postio.Sdk/Postio.Sdk.csproj -c Release -o artifacts
 - `release.yml` is **idempotent** (skips if `Postio.Sdk` at that
   version is already on api.nuget.org).
 
-## Spec drift
+## Spec ↔ runtime alignment
 
-`PhoneResult.IsReachable` is typed `object?` to accept either the
-spec-declared `string|null` or the live API's actual `bool`. Reapply
-if the model is regenerated.
+As of postio-api 1.0.3 the OpenAPI spec and runtime are aligned —
+`PhoneResult.IsReachable` is `bool?` (was `object?`) and the runtime
+always emits explicit nulls for every nullable field. If a future spec
+change re-introduces drift, prefer fixing it at the source (postio-api
+Zod schemas + handlers) over patching downstream.
 
 ## Secrets the CI needs
 

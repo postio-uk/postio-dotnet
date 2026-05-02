@@ -76,31 +76,24 @@ public sealed record EmailResult(
 
 /// <summary>
 /// Validation verdict for one phone number.
-///
-/// SPEC DRIFT (2026-05-02): the OpenAPI spec marks every nullable field as
-/// `required` with type [string, null], but on invalid input the live API
-/// drops them entirely. All optional fields default to null here so customer
-/// code doesn't see a parse error on real responses. Spec also says
-/// IsReachable is string-only; live API returns bool — typed as object to
-/// accept either. Reapply this block after any future regen.
 /// </summary>
 public sealed record PhoneResult(
     [property: JsonPropertyName("number")] string Number,
     [property: JsonPropertyName("isValid")] bool IsValid,
     [property: JsonPropertyName("isPossible")] bool IsPossible,
-    [property: JsonPropertyName("type")] string? Type = null,
-    [property: JsonPropertyName("countryCode")] string? CountryCode = null,
-    [property: JsonPropertyName("countryName")] string? CountryName = null,
-    [property: JsonPropertyName("nationalFormat")] string? NationalFormat = null,
-    [property: JsonPropertyName("internationalFormat")] string? InternationalFormat = null,
-    [property: JsonPropertyName("e164Format")] string? E164Format = null,
-    [property: JsonPropertyName("originalCarrier")] string? OriginalCarrier = null,
-    [property: JsonPropertyName("currentCarrier")] string? CurrentCarrier = null,
-    [property: JsonPropertyName("isPorted")] bool? IsPorted = null,
-    [property: JsonPropertyName("isReachable")] object? IsReachable = null,
-    [property: JsonPropertyName("mcc")] string? MCC = null,
-    [property: JsonPropertyName("mnc")] string? MNC = null,
-    [property: JsonPropertyName("level")] string? Level = null,
+    [property: JsonPropertyName("type")] string? Type,
+    [property: JsonPropertyName("countryCode")] string? CountryCode,
+    [property: JsonPropertyName("countryName")] string? CountryName,
+    [property: JsonPropertyName("nationalFormat")] string? NationalFormat,
+    [property: JsonPropertyName("internationalFormat")] string? InternationalFormat,
+    [property: JsonPropertyName("e164Format")] string? E164Format,
+    [property: JsonPropertyName("originalCarrier")] string? OriginalCarrier,
+    [property: JsonPropertyName("currentCarrier")] string? CurrentCarrier,
+    [property: JsonPropertyName("isPorted")] bool? IsPorted,
+    [property: JsonPropertyName("isReachable")] bool? IsReachable,
+    [property: JsonPropertyName("mcc")] string? MCC,
+    [property: JsonPropertyName("mnc")] string? MNC,
+    [property: JsonPropertyName("level")] string? Level,
     [property: JsonPropertyName("lookupError")] string? LookupError = null);
 
 public sealed record AddressSearchEnvelope(

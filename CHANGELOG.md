@@ -6,6 +6,15 @@ follows [SemVer](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-05-02
+
+### Changed
+
+- `PhoneResult.IsReachable` typed `bool?` (was `object?`). postio-api
+  1.0.3 aligned the spec with the runtime — HLR returns boolean.
+- `PhoneResult` nullable parameters drop their `= null` defaults.
+  The runtime now always emits explicit nulls for every field.
+
 ## [0.1.0] — 2026-05-02
 
 Initial release. First Postio .NET SDK on NuGet.
@@ -39,5 +48,6 @@ Initial release. First Postio .NET SDK on NuGet.
   returns booleans there even though the spec says string-only.
   Aligned once postio-api ships a spec/runtime fix.
 
-[Unreleased]: https://github.com/postio-uk/postio-dotnet/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/postio-uk/postio-dotnet/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/postio-uk/postio-dotnet/releases/tag/v0.1.1
 [0.1.0]: https://github.com/postio-uk/postio-dotnet/releases/tag/v0.1.0
