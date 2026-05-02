@@ -85,10 +85,15 @@ jobs:
           name: nupkg
           path: artifacts/
 
-      - name: Publish to NuGet (Trusted Publishers / OIDC)
+      - name: Exchange OIDC token for short-lived NuGet API key
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: postio
+
+      - name: Publish to NuGet
         run: |
           dotnet nuget push artifacts/*.nupkg \
             --source https://api.nuget.org/v3/index.json \
+            --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" \
             --skip-duplicate
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
