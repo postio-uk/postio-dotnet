@@ -1,7 +1,12 @@
-# postio-dotnet — Claude Code working notes
+# postio-dotnet — development notes
 
-.NET SDK for `postio-api`. Mirrors `@postio/core` with idiomatic .NET
-async-first ergonomics.
+.NET SDK for the [Postio API](https://postio.co.uk). Mirrors `@postio/core`
+(the JS family's runtime client) with idiomatic .NET async-first
+ergonomics. Lives in its own repo because the .NET toolchain doesn't
+co-exist with the JS-family pnpm workspace.
+
+Read [`README.md`](./README.md) for the customer-facing surface; this
+file is the operational guide for contributors and code agents.
 
 ## Stack
 
@@ -72,6 +77,3 @@ secret. Configure once at:
 https://www.nuget.org/account/Manage/TrustedPublishers
 Bind to `(postio-uk/postio-dotnet, release.yml, environment: nuget)`.
 
-## Tone for this repo
-
-Same as the umbrella: terse, casual, status-emoji summaries.
