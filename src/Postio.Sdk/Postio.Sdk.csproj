@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Postio.Sdk</RootNamespace>
+    <AssemblyName>Postio.Sdk</AssemblyName>
+
+    <!-- NuGet metadata -->
+    <PackageId>Postio.Sdk</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Postio</Authors>
+    <Company>Onno Group Limited</Company>
+    <Title>Postio SDK</Title>
+    <Description>.NET SDK for the Postio API — UK address, email, and phone validation. PAF + Ordnance Survey backed. Async-first via HttpClient, immutable records.</Description>
+    <PackageTags>postio;uk;address;postcode;validation;address-validation;postcode-lookup;address-lookup;uk-address;paf;royal-mail;ordnance-survey;email-validation;phone-validation;sdk;dotnet</PackageTags>
+    <PackageProjectUrl>https://postio.co.uk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/postio-uk/postio-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright (c) 2026 Onno Group Limited (trading as Postio)</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
