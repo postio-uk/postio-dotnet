@@ -11,7 +11,7 @@ namespace Postio.Sdk;
 /// </summary>
 /// <example>
 /// <code>
-/// var client = new PostioClient(new() { ApiKey = "pk_live_..." });
+/// var client = new PostioClient(new() { ApiKey = "pk_..." });
 /// var result = await client.Address.SearchAsync("downing street");
 /// foreach (var hit in result.Results)
 ///     Console.WriteLine($"{hit.Udprn}: {hit.Suggestion}");

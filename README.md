@@ -4,9 +4,12 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue)](https://www.nuget.org/packages/Postio.Sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-.NET SDK for the [Postio API](https://postio.co.uk) — UK address, email, and
-phone validation. Backed by Royal Mail PAF and Ordnance Survey. Async-first
-via `HttpClient`, immutable `record` types, source-only `System.Text.Json`.
+.NET SDK for [Postio](https://postio.co.uk) — the UK validation API for
+addresses, emails and phone numbers. Async-first via `HttpClient`, immutable
+`record` types, source-only `System.Text.Json`. Backed by Royal Mail PAF and
+Ordnance Survey.
+
+> **First time?** [Sign up free](https://postio.co.uk) — first 100 lookups on us, no card needed.
 
 ## Install
 
@@ -21,7 +24,7 @@ Targets `net8.0`+.
 ```csharp
 using Postio.Sdk;
 
-using var client = new PostioClient("pk_live_...");  // or read POSTIO_API_KEY env
+using var client = new PostioClient("pk_...");  // or read POSTIO_API_KEY env
 
 var result = await client.Address.SearchAsync("downing street");
 foreach (var hit in result.Results)
@@ -73,7 +76,7 @@ the raw `Envelope`.
 ```csharp
 var client = new PostioClient(new PostioClientOptions
 {
-    ApiKey         = "pk_live_...",
+    ApiKey         = "pk_...",
     BaseUrl        = "https://api.postio.co.uk/v1",       // default
     Timeout        = TimeSpan.FromSeconds(10),             // default
     Retries        = 2,                                    // 0 disables
