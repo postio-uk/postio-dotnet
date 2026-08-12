@@ -46,7 +46,6 @@ public sealed record Address(
     [property: JsonPropertyName("double_dependent_locality")] string? DoubleDependentLocality = null,
     [property: JsonPropertyName("delivery_point_suffix")] string? DeliveryPointSuffix = null,
     [property: JsonPropertyName("country")] string? Country = null,
-    [property: JsonPropertyName("county")] string? County = null,
     [property: JsonPropertyName("district")] string? District = null,
     [property: JsonPropertyName("ward")] string? Ward = null,
     [property: JsonPropertyName("latitude")] double? Latitude = null,
